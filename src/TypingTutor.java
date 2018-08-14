@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
@@ -29,9 +30,11 @@ public class TypingTutor implements KeyListener{
 			panel.add(l);
 			l.setFont(l.getFont().deriveFont(28.0f));
 			l.setHorizontalAlignment(JLabel.CENTER);
+			l.setOpaque(true);
 			frame.addKeyListener(this);
 			
-
+			
+ 
 		}
 
 		@Override
@@ -49,10 +52,14 @@ public class TypingTutor implements KeyListener{
 				System.out.println(" correct ");
 				currentLetter = generateRandomLetter();
 				l.setText("" + currentLetter);
+				l.setBackground(Color.GREEN);
 			}else {
 				System.out.println(" Incorrect");
 				currentLetter = generateRandomLetter();
 				l.setText("" + currentLetter);
+				
+				l.setBackground(Color.RED);
+				
 			}
 		}
 
