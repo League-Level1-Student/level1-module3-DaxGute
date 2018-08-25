@@ -8,8 +8,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class TypingTutor implements KeyListener{
-	char currentLetter = generateRandomLetter();
-	JLabel l;
+	private char currentLetter = generateRandomLetter();
+	private JLabel l;
+	private final int NUM_LETTERS_IN_ALPHABET = 26;
 	public static void main(String[] args) {
 		TypingTutor tt = new TypingTutor();
 		tt.setup();
@@ -17,7 +18,7 @@ public class TypingTutor implements KeyListener{
 	
 		char generateRandomLetter() {
 		      Random r = new Random();
-		      return (char) (r.nextInt(26) + 'a');
+		      return (char) (r.nextInt(NUM_LETTERS_IN_ALPHABET) + 'a');
 		}
 		public void setup() {
 			JFrame frame = new JFrame("typing: yah");
@@ -39,8 +40,7 @@ public class TypingTutor implements KeyListener{
 
 		@Override
 		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
+						
 		}
 
 		@Override
